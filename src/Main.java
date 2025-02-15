@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     static Scanner vstup = new Scanner(System.in);
     public static void main(String[] args) {
+        int[] vysledek = predchoziNacti(10);
+        vypisPole(vysledek);
         System.out.println("Zadejte čitatel 1. zlomku: ");
         int citatel1 = vstup.nextInt();
         System.out.println("Zadejte jmenovatel 1. zlomku: ");
@@ -83,5 +85,18 @@ public class Main {
             default:
         }
 
+    }
+    static int[] predchoziNacti(int n) {
+        int[] a = new int[n];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = n-i;
+        }
+        return a;
+    }
+
+    static void vypisPole (int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
     }
 }
